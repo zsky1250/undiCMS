@@ -1,0 +1,13 @@
+<!DOCTYPE aspectj PUBLIC "-//AspectJ//DTD//EN" "http://www.eclipse.org/aspectj/dtd/aspectj.dtd">
+<!--编译时织入用，现在不用-->
+<aspectj>
+	<weaver options="-verbose, -nowarn, -warn:none">
+		<!-- only weave classes in our application-specific packages -->
+		<include within="com.udf..*" />
+	</weaver>
+	<aspects>
+		<!-- weave in just this aspect -->
+		<aspect name="com.udf.core.exception.log.ExceptionAdvisor" />
+		<aspect name="com.udf.pms.security.DataSecurityUtils" />
+	</aspects>
+</aspectj>
